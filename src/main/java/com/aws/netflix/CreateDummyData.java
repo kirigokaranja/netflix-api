@@ -21,7 +21,7 @@ public class CreateDummyData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Category thriller = new Category("Thriller");
+        Category thriller = new Category("Action");
         categoryRepository.save(thriller);
 
         Category comedy = new Category("Comedy");
