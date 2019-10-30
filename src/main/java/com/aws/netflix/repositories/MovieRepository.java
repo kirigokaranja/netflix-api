@@ -17,5 +17,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findByCategoryAndMovieTypeAndVerified(Category categoryId, MovieType type, MovieVerified verified);
     Optional<Movie> findByMovieNameAndReleaseYear(String moviename, int year);
     List<Movie> findByMovieTypeAndVerified(MovieType type, MovieVerified verified);
+    Optional<Movie> findByUser_Id(Long id);
 
 }

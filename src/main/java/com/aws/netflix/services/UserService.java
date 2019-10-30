@@ -20,6 +20,6 @@ public interface UserService {
 
     public User update(Long id, User User);
 
-    public void delete(Long id, User user);
+    public void delete(Long id);
 
 }

@@ -2,8 +2,10 @@ package com.aws.netflix.services;
 
 import com.aws.netflix.exceptions.NotAuthorized;
 import com.aws.netflix.exceptions.NotFoundException;
+import com.aws.netflix.models.Movie;
 import com.aws.netflix.models.User;
 import com.aws.netflix.models.UserType;
+import com.aws.netflix.repositories.MovieRepository;
 import com.aws.netflix.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +16,11 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     public UserRepository userRepository;
+    public MovieRepository movieRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, MovieRepository movieRepository) {
         this.userRepository = userRepository;
+        this.movieRepository = movieRepository;
     }
 
     @Override
@@ -56,12 +60,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void delete(Long id, User user) {
-        User userDelete = findByID(id);
-
-        if (userDelete.getUserNationalId() != user.getUserNationalId())
-            throw new NotFoundException("User " + id + " and National Id " + user.getUserNationalId() + " Not Found");
-
+    public void delete(Long id) {
+//        User userDelete = userRepository.findById(id).orElseThrow(() -> new NotFoundException("User " + id + " Not Found"));
+//        Optional<Movie> movie = movieRepository.findByUser_Id(id);
+//        System.out.println(movie);
+//        if (movie.isPresent()){
+//            throw new NotAuthorized("You cannot delete a user who has a movie");
+//        }
         userRepository.deleteById(id);
     }
 }

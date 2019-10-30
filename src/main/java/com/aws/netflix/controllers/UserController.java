@@ -75,8 +75,8 @@ public class UserController {
 
     //delete a user
     @DeleteMapping(value = "{id}")
-    void delete(@PathVariable Long id, @RequestBody User user) {
-         userService.delete(id, user);
+    void delete(@PathVariable Long id) {
+         userService.delete(id);
     }
 
     //update a user
