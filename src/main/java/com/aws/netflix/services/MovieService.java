@@ -28,4 +28,6 @@ public interface MovieService {
 
     Optional<Movie> findByMovieNameAndReleaseYear(String name, int year);
 
+    List<Movie> findByMovieTypeAndVerified();
+
 }

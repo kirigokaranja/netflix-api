@@ -97,4 +97,9 @@ public class MovieServiceImpl implements MovieService {
     public Optional<Movie> findByMovieNameAndReleaseYear(String name, int year) {
         return movieRepository.findByMovieNameAndReleaseYear(name, year);
     }
+
+    @Override
+    public List<Movie> findByMovieTypeAndVerified( ) {
+        return movieRepository.findByMovieTypeAndVerified(MovieType.suggested, MovieVerified.notverified);
+    }
 }

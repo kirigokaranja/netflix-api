@@ -2,6 +2,7 @@ package com.aws.netflix.controllers;
 
 import com.aws.netflix.models.Movie;
 import com.aws.netflix.models.MovieType;
+import com.aws.netflix.models.MovieVerified;
 import com.aws.netflix.services.CategoryService;
 import com.aws.netflix.services.MovieService;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,11 @@ public class MovieController {
     @GetMapping(value = "category/{id}")
     List<Movie> findByCategoryId(@PathVariable Long id, @RequestParam(value = "type")MovieType type){
         return movieService.findByCategoryAndType(id, type);
+    }
+
+    @GetMapping(value = "new")
+    List<Movie> findByTypeAndCategory(){
+        return movieService.findByMovieTypeAndVerified();
     }
 
 }
