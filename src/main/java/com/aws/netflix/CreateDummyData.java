@@ -21,13 +21,13 @@ public class CreateDummyData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Category thriller = new Category("Action");
-        categoryRepository.save(thriller);
-
-        Category comedy = new Category("Comedy");
-        categoryRepository.save(comedy);
-
-        User admin = new User("Admin", UserType.admin, 1);
-        userRepository.save(admin);
+//        Category thriller = new Category("Action");
+//        categoryRepository.save(thriller);
+//
+//        Category comedy = new Category("Comedy");
+//        categoryRepository.save(comedy);
+//
+//        User admin = new User("Admin", UserType.admin, 1);
+//        userRepository.save(admin);
     }
 }
