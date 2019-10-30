@@ -36,7 +36,4 @@ public class MovieController {
         return movieService.findByCategoryAndType(id, type);
     }
 
-
-
-
 }

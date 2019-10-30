@@ -67,6 +67,12 @@ public class UserController {
         return movieService.delete(id, userid);
     }
 
+    //admin verifies a movie
+    @PostMapping(value = "{userid}/verify/{id}")
+    Movie verifyMovie(@PathVariable(value = "id") Long id, @PathVariable(value = "userid") Long userid){
+        return movieService.verifyMovie(id, userid);
+    }
+
     //delete a user
     @DeleteMapping(value = "{id}")
     void delete(@PathVariable Long id, @RequestBody User user) {
